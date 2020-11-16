@@ -1,0 +1,17 @@
+{% extends 'header.html'%}
+{% block content %}
+    <section class="banner-bottom-w3layouts bg-li py-5" id="services">
+		<div align="right">{{user}} &emsp;&emsp;&emsp;</div>
+		<div class="container py-xl-5 py-lg-3">
+			<div align="center">
+			<h3 class="tittle text-center font-weight-bold">News of {{name}}</h3>
+			
+
+{{data | safe}}
+<form>
+  <input type="button" value="Go back!" onclick="history.back()">
+</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}

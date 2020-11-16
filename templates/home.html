@@ -1,0 +1,36 @@
+{% extends 'header.html'%}
+{% block content %}
+    <section class="banner-bottom-w3layouts bg-li py-5" id="services">
+		<div align="right">Welcome {{user}} &emsp;&emsp;&emsp;</div>
+		<div class="container py-xl-5 py-lg-3">
+			<div align="center">
+			<a href="/fetchnews"><button type="button" class="btn btn-primary">Fetch new news</button></a>
+			<h3 class="tittle text-center font-weight-bold">News</h3>
+				{% for k in s  %}
+					{% if k == 'ht'%}
+					<div class="col-lg-4 about-in text-center my-lg-0 my-3">
+						<div class="card active">
+							<!--<a href="/news?view={{k}}&location=pune"><button type="button" class="btn btn-primary">Hindustan Times</button></a>  -->
+							<a href="/news?view={{k}}&location=pune"><button type="button" class="btn"  ><img src="{{ url_for('static', filename='images/ht.jpg')}}" style="height:30px; width=100px"></button></a>
+						</div>
+					</div>
+					{% elif k == 'ie' %}
+					<div class="col-lg-4 about-in text-center my-lg-0 my-3">
+						<div class="card active">
+							<!--<a href="/news?view={{k}}&location=mumbai"><button type="button" class="btn btn-success">&nbsp;Indian Express &nbsp;&nbsp;</button></a>-->
+							<a href="/news?view={{k}}&location=mumbai"><button type="button" class="btn" ><img src="{{ url_for('static', filename='images/ie.jpg')}}" style="height:30px; width=100px"></button></a>
+						</div>
+					</div>
+					{% else %}
+					<div class="col-lg-4 about-in text-center my-lg-0 my-3">
+						<div class="card active">
+							<!--<a href="/news?view={{k}}&location=mumbai"><button type="button" class="btn btn-warning">&nbsp;Times of India &nbsp;&nbsp;</button></a>-->
+							<a href="/news?view={{k}}&location=mumbai"><button type="button" class="btn" ><img src="{{ url_for('static', filename='images/toi.jpg')}}" style="height:30px; width=100px"></button></a>
+						</div>
+					</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
